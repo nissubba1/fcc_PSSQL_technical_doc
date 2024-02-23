@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PostgreSQL Documentation" />
+    <title>PostgreSQL Technical Documentation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header class="doc-title">PostgreSQL Documentation</header>
+      <ul class="nav-ul">
+        <li class="nav-list">
+          <a href="#Introduction" class="nav-link">Introduction</a>
+        </li>
+        <li class="nav-list">
+          <a href="#PostgreSQL" class="nav-link">PostgreSQL</a>
+        </li>
+        <li class="nav-list">
+          <a href="#Installation" class="nav-link">Installation</a>
+        </li>
+        <li class="nav-list">
+          <a href="#Create_Database" class="nav-link">Create Database</a>
+        </li>
+        <li class="nav-list">
+          <a href="#Create_Table" class="nav-link">Create Table</a>
+        </li>
+        <li class="nav-list"><a href="#Insert" class="nav-link">Insert</a></li>
+        <li class="nav-list"><a href="#Update" class="nav-link">Update</a></li>
+        <li class="nav-list"><a href="#Delete" class="nav-link">Delete</a></li>
+        <li class="nav-list"><a href="#Join" class="nav-link">Join</a></li>
+        <li class="nav-list">
+          <a href="#Implicit_Join" class="nav-link">Implicit Join</a>
+        </li>
+        <li class="nav-list">
+          <a href="#Explicit_Join" class="nav-link">Explicit Join</a>
+        </li>
+        <li class="nav-list">
+          <a href="#Left_Join" class="nav-link">Left Join</a>
+        </li>
+        <li class="nav-list">
+          <a href="#Right_Join" class="nav-link">Right Join</a>
+        </li>
+        <li class="nav-list">
+          <a href="#Full_Join" class="nav-link">Full Join</a>
+        </li>
+        <li class="nav-list">
+          <a href="#Reference" class="nav-link">Reference</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article class="article-block">
+          <p class="document">
+            Hi, welcome to my technical documentation on PostgreSQL database. My
+            name is Nishan Subba, and I'm currently a senior majoring in
+            Information Systems at the University of Maryland, Baltimore County.
+            This project was created as a requirement for the freeCodeCamp
+            Responsive Web Design Certification. One of my favorite languages is
+            SQL, and I'm currently learning to use the PostgreSQL database. In
+            the past, I have used MySQL and Oracle SQL databases for my college
+            projects and personal projects. I hope you enjoy reading my
+            PostgreSQL technical documentation.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="PostgreSQL">
+        <header>PostgreSQL</header>
+        <article class="article-block">
+          <p class="document">
+            PostgreSQL is an advanced, open-source object-relational database
+            system known for its reliability, robustness, and performance.
+            PostgreSQL supports both SQL (relational) and JSON (non-relational)
+            querying, making it a highly versatile database system for a wide
+            variety of data processing and analysis tasks.
+          </p>
+          <p class="document">
+            It was developed as part of POSTGRES project at University of
+            California, Berkeley. The aim behind the project was to create an
+            advanced database technology beyond the capabilities of existing
+            systems at the time. It was designed to support complex data types,
+            new forms of data integrity, and allow extensibility by users.
+          </p>
+          <ul>
+            <li>
+              <span class="bold">ACID Compliance</span>: Ensures that all
+              transactions are processed reliably, maintaining data integrity.
+            </li>
+            <li>
+              <span class="bold">Extensibility</span>: Users can define their
+              own data types, build out custom functions, and even write code in
+              various programming languages without recompiling the database.
+            </li>
+            <li>
+              <span class="bold">Advanced Data Types</span>: Supports a wide
+              range of data types, including geometric primitives, JSON, and
+              XML.
+            </li>
+            <li>
+              <span class="bold">Strong Community Support</span>: Benefits from
+              a vibrant, active community that contributes to its continuous
+              development and improvement.
+            </li>
+            <li>
+              <span class="bold">Performance and Reliability</span>: Offers
+              sophisticated optimization techniques, strong transactional
+              integrity, and support for concurrent transactions, making it
+              highly reliable and performant for enterprise applications.
+            </li>
+            <li>
+              <span class="bold">Cost-Effective</span>: Being open-source, it
+              does not incur licensing costs, making it a cost-effective
+              solution for businesses of all sizes.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section class="main-section" id="Installation">
+        <header>Installation</header>
+        <article class="article-block">
+          <p class="document">
+            In order to install PostgreSQL, make sure you have a compatible
+            system:
+          </p>
+          <ol>
+            <li>
+              An operating system supported by PostgreSQL (Linux, macOS,
+              Windows)
+            </li>
+            <li>Sufficient disk space for the database</li>
+            <li>Network access for remote connectivity (optional)</li>
+          </ol>
+          <p class="document">
+            Please visit
+            <a href="https://www.postgresql.org/">official postgres website</a>
+            for the instruction on how to download and run on your computer.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Create_Database">
+        <header>Create Database</header>
+        <article class="article-block">
+          <p class="document">
+            When you first install the PostgreSQL, you will have a database
+            called <span class="code-highlight">`postgres`</span> created for
+            you. However, if you want to create your own database, you need to
+            follow this format.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            CREATE DATABASE database-name;
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Create_Table">
+        <header>Create Table</header>
+        <article class="article-block">
+          <p class="document">
+            Alright, once you have your PostgreSQL installed, and database
+            created, it's time to start building your table. Each table will
+            have row which requires a column name and data type. There are many
+            different data type such as integer (int), varchar, date, and etc so
+            before you assign a data type, make sure to look which data type is
+            best for you. The syntax for the creating a table is:
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            CREATE TABLE table-name (
+                  column-name data-type,
+                  column-name data-type
+              );
+          </code>
+        </pre>
+          <p class="document">
+            Each table need a primary key. A primary key is a unique constraint
+            which makes sure that no duplicate value is inserted into the table.
+            For example, primary key can be student_id, id, social_security,
+            etc. Each table can have a foreign key. Foreign key is what links
+            multiple table together. A foreign key must reference a primary key
+            from another table.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            CREATE TABLE table-name (
+                  column-name data-type PRIMARY KEY,
+                  column-name data-type
+              );
+          </code>
+        </pre>
+          <p class="document">OR</p>
+          <pre class="code-container">
+          <code class="code-block">
+            CREATE TABLE table-name (
+                  column-name data-type,
+                  column-name data-type,
+                  PRIMARY KEY (column-name)
+              );
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Insert">
+        <header>Insert</header>
+        <article class="article-block">
+          <p class="document">
+            Once you have created the table, now its time to populate it. Table
+            can be populated with the key word
+            <span class="code-highlight">`INSERT`</span>. When you insert a data
+            into a table, you need to specify which table you are inserting and
+            for what column. The syntax for the inserting into a table is:
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            INSERT INTO table-name 
+                (column-name1, column-name2)
+            VALUES 
+                (column-1-value, column-2-value);
+          </code>
+        </pre>
+          <p class="document">If you want to insert a multiple row at once:</p>
+          <pre class="code-container">
+          <code class="code-block">
+            INSERT INTO table-name 
+                (column-name1, column-name2) 
+            VALUES
+                (column-1-value, column-2-value), 
+                (column-1-value, column-2-value),
+                (column-1-value, column-2-value);
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Update">
+        <header>Update</header>
+        <article class="article-block">
+          <p class="document">
+            The UPDATE statement is used to modify existing records in a table.
+            It can change one or several fields at a time, and it typically
+            includes a WHERE clause to specify which rows should be updated. If
+            the WHERE clause is omitted, all rows in the table will be updated,
+            which can lead to unintended data modifications.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            UPDATE table-name
+            SET column-name
+            WHERE column-name = value;
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Delete">
+        <header>Delete</header>
+        <article class="article-block">
+          <p class="document">
+            The DELETE statement is used to remove one or more rows from a
+            table. Similar to the UPDATE statement, it usually includes a WHERE
+            clause to specify which rows should be deleted. If you omit the
+            WHERE clause, all rows in the table will be deleted, which
+            effectively empties the table but does not remove the table
+            structure itself.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            DELETE FROM table-name 
+            WHERE condition;
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Join">
+        <header>Join</header>
+        <article class="article-block">
+          <p class="document">
+            Joins in SQL are used to combine rows from two or more tables based
+            on a related column between them. There are various types of joins,
+            each serving different use cases.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Implicit_Join">
+        <header>Implicit Join</header>
+        <article class="article-block">
+          <p class="document">
+            An implicit join is done using the WHERE clause to specify the
+            condition that links the tables.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            SELECT columns
+            FROM table-1-name 
+            , table-2-name
+            WHERE table-1-name.common-field = table-2-name.common-field;
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Explicit_Join">
+        <header>Explicit Join</header>
+        <article class="article-block">
+          <p class="document">
+            An explicit join uses the JOIN keyword to specify the table to join
+            and the ON clause to specify the condition.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            SELECT columns 
+            FROM table-1 
+            JOIN table-2 
+            ON table-1.common-field = table-2.common-field;
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Left_Join">
+        <header>Left Join</header>
+        <article class="article-block">
+          <p class="document">
+            The LEFT JOIN or LEFT OUTER JOIN returns all records from the left
+            table (table1), and the matched records from the right table
+            (table2). If there is no match, the result is NULL on the side of
+            the right table.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            SELECT columns
+            FROM table-1
+            LEFT JOIN table-2 
+            ON table-1.common-field = table-2.common-field;
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Right_Join">
+        <header>Right Join</header>
+        <article class="article-block">
+          <p class="document">
+            The RIGHT JOIN or RIGHT OUTER JOIN returns all records from the
+            right table (table2), and the matched records from the left table
+            (table1). If there is no match, the result is NULL on the side of
+            the left table.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            SELECT columns
+            FROM table-1
+            RIGHT JOIN table-2 
+            ON table-1.common-field = table-2.common-field;
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Full_Join">
+        <header>Full Join</header>
+        <article class="article-block">
+          <p class="document">
+            The FULL JOIN or FULL OUTER JOIN returns all records when there is a
+            match in either left (table1) or right (table2) table records. It
+            effectively combines the results of both LEFT JOIN and RIGHT JOIN.
+          </p>
+          <pre class="code-container">
+          <code class="code-block">
+            SELECT columns
+            FROM table-1
+            FULL JOIN table-2 
+            ON table-1.common-field = table-2.common-field;
+          </code>
+        </pre>
+        </article>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article class="article-block">
+          <p class="document">
+            For references and more detailed documentation, please visit
+            <a href="https://www.postgresql.org/">PostgreSQL official</a> site.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
